@@ -16,15 +16,7 @@ class ExtendedSeleniumLib(SeleniumLibrary):
              element1=_find_element(self, args[:1])
              self.highlight(element1)
         return SeleniumLibrary.run_keyword(self, name, args, kwargs)
-    
-    @keyword
-    #  Example from robot framework doc 
-    def title_should_start_with(self, expected):
-        title = self.get_title()
-        if not title.startswith(expected):
-            raise AssertionError("Title '%s' did not start with '%s'"
-                                 % (title, expected))
-    
+
     # code to highlight the element
     # copied from https://gist.github.com/marciomazza/3086536.js  
     def highlight(self,element):
